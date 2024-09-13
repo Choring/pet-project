@@ -100,7 +100,7 @@ export default function Sidebar() {
         </aside>
 
         <div className='map-section col-span-1 lg:col-span-2 fixed md:static top-16 right-0 z-10 h-screen bg-white p-4'>
-          <MapUI lon={'경도'} lng={'위도'} />
+          <MapUI />
         </div>
       </div>
     </>
