@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Map, MapMarker } from 'react-kakao-maps-sdk';
+import { Map, MapMarker, useKakaoLoader } from 'react-kakao-maps-sdk';
 
 const KAKAO_MAP_API_KEY = `89295d11ebf99024b5896e56f20e1cd9`;
 
 export default function MapUI({ lat, lng, title }) {
+  useKakaoLoader();
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
