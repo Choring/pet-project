@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.navbar-logo {
+  filter: invert(37%) sepia(84%) saturate(1742%) hue-rotate(-20deg)
+    brightness(102%) contrast(102%);
+}

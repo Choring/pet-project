@@ -14,9 +14,9 @@ export default function MapUI({ lat, lng, title }) {
     document.head.appendChild(script);
 
     script.onload = () => {
-      console.log('카카오 맵 스크립트 로드 완료');
+      // console.log('카카오 맵 스크립트 로드 완료');
       window.kakao.maps.load(() => {
-        console.log('카카오 맵 API 로드 완료');
+        // console.log('카카오 맵 API 로드 완료');
         setIsLoaded(true);
       });
     };
