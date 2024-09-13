@@ -87,7 +87,7 @@ export default function Sidebar({ filterMuseum }) {
               nextLabel='>'
               onPageChange={handlePageClick}
               pageRangeDisplayed={5}
-              marginPagesDisplayed={2}
+              marginPagesDisplayed={0}
               pageCount={Math.ceil(filteredData.length / itemsPerPage)} // 전체 페이지 수 계산
               previousLabel='<'
               pageClassName='page-item'
