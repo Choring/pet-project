@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+<<<<<<< HEAD
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
@@ -16,3 +17,11 @@ module.exports = {
   plugins: [],
 }
 
+=======
+  content: ['./src/**/*.{html,js,jsx}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+>>>>>>> eunseon
