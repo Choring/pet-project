@@ -5,12 +5,10 @@ import { ListPage } from "./pages/List/ListPage";
 
 function App() {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<MainPage />}></Route>
-        <Route path="/List" element={<ListPage />}></Route>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<MainPage />}></Route>
+      <Route path="/List" element={<ListPage />}></Route>
+    </Routes>
   );
 }
 

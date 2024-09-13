@@ -1,22 +1,18 @@
-.section {
+.article {
     display:flex;
     justify-content: space-between;
-    gap: 6px;
+    gap: 12px;
 }
-.list-container {
-    border:1px solid blue;
+.list-container {    
     width:30%;
 }
 .map-container {
-    border:1px solid red;
     width: 70%;
 }
+
 .item-box {
-    display: flex;
-    max-height: 50px;
-    height: 100%;
-    align-items: center;
-    gap: 4px;
+    height: 180px;
+    border: 1px solid black;
 }
 p {
     margin: 0;
