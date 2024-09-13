@@ -22,10 +22,10 @@ export const MainPage = () => {
 
   const Section = ({ title }) => (
     <div>
-      <header className="text-2xl mt-5">{title}</header>
+      <header className="text-2xl mt-5 ml-3">{title}</header>
       <div className="w-full flex flex-row">
         {Array(7).fill(0).map((_, index) => (
-          <div key={index} className="w-44 h-56 mr-5 border-solid border divide-y">
+          <div key={index} className="w-44 h-56 mr-5 border-solid border divide-y mt-5">
             <div className='h-4/6 w-full'></div>
             <div>
               <div className='text-lg'>시설명</div>
@@ -41,7 +41,7 @@ export const MainPage = () => {
   return (
     <div className='flex flex-col'>
       <div className='mt-28 bg-orange w-full h-96 flex flex-col items-center justify-center'>
-        <div className="h-screen w-2/5 flex flex-col items-center justify-center h-screen bg-cover bg-center" style={{ backgroundImage: `url(${slides[0].url})` }}>
+        <div className="h-screen w-2/5 flex flex-col items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${slides[0].url})` }}>
         </div>
         <button className=' group-hover:block absolute top-[40%] translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 text-white cursor-pointer'>
           &#10094;
@@ -52,10 +52,9 @@ export const MainPage = () => {
       </div>
 
       <div className=' flex flex-col items-center'>
-        <Section title="식당" />
         <Section title="카페" />
-        <Section title="미술관" />
-        <Section title="펜션" />
+        <Section title="미술관,박물관" />
+        <Section title="병원" />
       </div>
     </div>
   )
