@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Map, MapMarker, useKakaoLoader } from 'react-kakao-maps-sdk';
-import { FaDoorOpen, FaLocationDot } from 'react-icons/fa6';
-import { MdMoney, MdMoneyOff, MdMuseum } from 'react-icons/md';
-import { LuParkingCircle, LuParkingCircleOff } from 'react-icons/lu';
 
 const KAKAO_MAP_API_KEY = `89295d11ebf99024b5896e56f20e1cd9`;
 
-export default function MapUI({ lat, lng, data, title, phoneNumber }) {
+export default function MapUI({ lat, lng, data, title }) {
   useKakaoLoader();
   const [isLoaded, setIsLoaded] = useState(false);
   const [isOpen, setIsOpen] = useState(false);

@@ -3,10 +3,17 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export default function Navbar({ setFilterMuseum, setPage }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState(null); // 활성화된 링크 상태 추가
   const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  // 링크 클릭 시 활성화된 링크 상태 업데이트
+  const handleLinkClick = (index) => {
+    setActiveLink(index);
+    setIsMenuOpen(false); // 모바일 메뉴가 열려 있으면 닫기
   };
 
   return (
@@ -16,6 +23,7 @@ export default function Navbar({ setFilterMuseum, setPage }) {
           className='flex items-center space-x-3 rtl:space-x-reverse'
           onClick={() => {
             navigate('/');
+            setActiveLink(null); // 홈으로 이동 시 모든 링크 비활성화
           }}
         >
           <img
@@ -63,11 +71,16 @@ export default function Navbar({ setFilterMuseum, setPage }) {
           <ul className='navbar-mobile-menu flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700'>
             <li>
               <Link
-                className=' block py-2 px-3 text-gray-900 rounded hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#ff7336] md:p-0 md:dark:hover:text-[#ff7336] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
+                className={`block py-2 px-3 text-gray-900 rounded ${
+                  activeLink === 0
+                    ? 'bg-[#ff7336] text-white'
+                    : 'hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#ff7336] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white'
+                }`}
                 aria-current='page'
                 onClick={() => {
                   navigate('/');
                   setPage(1); // 페이지 1로 초기화
+                  handleLinkClick(0); // 링크 활성화
                 }}
               >
                 메인
@@ -75,26 +88,45 @@ export default function Navbar({ setFilterMuseum, setPage }) {
             </li>
             <li>
               <Link
-                className=' block py-2 px-3 text-gray-900 rounded hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#ff7336] md:p-0 md:dark:hover:text-[#ff7336] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
-                onClick={() => setPage(1)} // 페이지 1로 초기화
+                className={`block py-2 px-3 text-gray-900 rounded ${
+                  activeLink === 1
+                    ? 'bg-[#ff7336] text-white'
+                    : 'hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#ff7336] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white'
+                }`}
+                onClick={() => {
+                  setPage(1); // 페이지 1로 초기화
+                  handleLinkClick(1); // 링크 활성화
+                }}
               >
                 병원
               </Link>
             </li>
             <li>
               <Link
-                className=' block py-2 px-3 text-gray-900 rounded hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#ff7336] md:p-0 md:dark:hover:text-[#ff7336] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
-                onClick={() => setPage(1)} // 페이지 1로 초기화
+                className={`block py-2 px-3 text-gray-900 rounded ${
+                  activeLink === 2
+                    ? 'bg-[#ff7336] text-white'
+                    : 'hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#ff7336] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white'
+                }`}
+                onClick={() => {
+                  setPage(1); // 페이지 1로 초기화
+                  handleLinkClick(2); // 링크 활성화
+                }}
               >
                 카페
               </Link>
             </li>
             <li>
               <Link
-                className='art-museum-btn block py-2 px-3 text-gray-900 rounded hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#ff7336] md:p-0 md:dark:hover:text-[#ff7336] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
+                className={`art-museum-btn block py-2 px-3 text-gray-900 rounded ${
+                  activeLink === 3
+                    ? 'bg-[#ff7336] text-white'
+                    : 'hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#ff7336] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white'
+                }`}
                 onClick={() => {
                   setFilterMuseum(true);
                   setPage(1); // 페이지 1로 초기화
+                  handleLinkClick(3); // 링크 활성화
                 }}
               >
                 미술관/박물관
