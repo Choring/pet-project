@@ -32,7 +32,7 @@ p {
   }
 .page-link {
     padding: 8px 12px;
-    color: #dc3545; 
+    color: #ff7336; 
     border: none !important;
     border-radius: 4px;
     text-decoration: none;
@@ -46,10 +46,9 @@ p {
 }
 
 .page-item.active .page-link {
-    background-color: #dc3545;
+    background-color: #ff7336;
     color: white;
-    border-color: #dc3545;
-    border:2px solid red !important;
+    border-color: #ff7336;
 }
 
 .page-item.disabled .page-link {

@@ -3,11 +3,12 @@ import './ListPage.style.css';
 import { usePetFriendlyFacility } from '../../hooks/usePetFriendlyFacility';
 import { KakaoMap } from './component/KakaoMap';
 import ReactPaginate from "react-paginate";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const ListPage = () => {
   const [page, setPage] = useState(1);
   const location = useLocation();
+  const navigate = useNavigate();
   const queryParams = new URLSearchParams(location.search);
   const [latitude, setLatitude] = useState(queryParams.get('lat'));
   const [longitude, setLongitude] = useState(queryParams.get('lng'));
@@ -36,7 +37,7 @@ export const ListPage = () => {
     <div className='section max-w-[1200px] mx-auto'>
         <div className='w-full my-5 flex justify-between'>
             <p className="font-bold text-[24px] text-center">반려동물 동반시설 리스트</p>
-            <button>뒤로가기</button>
+            <button className="border p-2 px-3 rounded-[18px] bg-[#ff7336] text-white" onClick={() => navigate(-1)}>뒤로가기</button>
         </div>
         <div className="article">
             <div className="list-container">
