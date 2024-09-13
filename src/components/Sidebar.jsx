@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useArtQuery } from '../hooks/useArtData';
 import NotFound from './NotFound';
 import LoadingSpinner from './LoadingSpinner';
@@ -8,7 +8,10 @@ import { LuParkingCircle, LuParkingCircleOff } from 'react-icons/lu';
 import MapUI from './MapUI';
 
 export default function Sidebar() {
-  const { data, isLoading, isError, error } = useArtQuery();
+  const { data, isLoading, isError } = useArtQuery();
+  const [lat, setLat] = useState(33.450701);
+  const [lng, setLng] = useState(126.570667);
+  const [title, setTitle] = useState('KaKao');
 
   if (isError) return <NotFound />;
   if (isLoading) return <LoadingSpinner />;
@@ -17,6 +20,12 @@ export default function Sidebar() {
   const filteredData = data?.filter(
     (item) => item.카테고리3 === '미술관' || item.카테고리3 === '박물관'
   );
+
+  const handleLatLng = (lat, lng, title) => {
+    setLat(lat);
+    setLng(lng);
+    setTitle(title);
+  };
 
   return (
     <>
@@ -53,7 +62,8 @@ export default function Sidebar() {
             {filteredData?.map((item, index) => (
               <li
                 key={index}
-                className='border-solid border-2 rounded-md my-2 p-4 w-full'
+                className='museum-list border-solid border-2 rounded-md my-2 p-4 w-full'
+                onClick={() => handleLatLng(item.위도, item.경도, item.시설명)} // 클릭할 때 위도, 경도를 전달
               >
                 <p>
                   <MdMuseum className='text-2xl' />
@@ -99,8 +109,9 @@ export default function Sidebar() {
           </ul>
         </aside>
 
-        <div className='map-section col-span-1 lg:col-span-2 fixed md:static top-16 right-0 z-10 h-screen bg-white p-4'>
-          <MapUI />
+        <div className='map-section' style={{ width: '100%', height: '600px' }}>
+          <MapUI lat={lat} lng={lng} title={title} />{' '}
+          {/* lat과 lng 값을 MapUI로 전달 */}
         </div>
       </div>
     </>
