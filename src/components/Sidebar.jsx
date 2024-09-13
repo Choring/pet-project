@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import NotFound from './NotFound';
 import LoadingSpinner from './LoadingSpinner';
-import { MdMoney, MdMoneyOff, MdMuseum } from 'react-icons/md';
 import { FaDoorOpen, FaLocationDot } from 'react-icons/fa6';
+import { MdMoney, MdMoneyOff, MdMuseum } from 'react-icons/md';
 import { LuParkingCircle, LuParkingCircleOff } from 'react-icons/lu';
 import MapUI from './MapUI';
 import { useArtMuseum } from '../hooks/useArtMuseum';
@@ -14,6 +14,7 @@ export default function Sidebar({ filterMuseum }) {
   const [lat, setLat] = useState(33.450701);
   const [lng, setLng] = useState(126.570667);
   const [title, setTitle] = useState('KaKao');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
@@ -35,6 +36,7 @@ export default function Sidebar({ filterMuseum }) {
     setLat(lat);
     setLng(lng);
     setTitle(title);
+    setPhoneNumber(phoneNumber);
   };
 
   const handlePageClick = ({ selected }) => {
@@ -74,26 +76,6 @@ export default function Sidebar({ filterMuseum }) {
                   <span>{item.운영시간}</span>
                 </div>
                 <div className='rest-info'>{item.휴무일}</div>
-                <div className='extra-info flex'>
-                  {item['주차 가능여부'] === 'Y' ? (
-                    <span>
-                      <LuParkingCircle />
-                    </span>
-                  ) : (
-                    <span>
-                      <LuParkingCircleOff />
-                    </span>
-                  )}
-                  {item['애견 동반 추가 요금'] === '없음' ? (
-                    <span>
-                      <MdMoneyOff />
-                    </span>
-                  ) : (
-                    <span>
-                      <MdMoney />
-                    </span>
-                  )}
-                </div>
               </li>
             ))}
           </ul>
@@ -124,7 +106,7 @@ export default function Sidebar({ filterMuseum }) {
         </aside>
 
         <div className='map-section' style={{ width: '100%', height: '600px' }}>
-          <MapUI lat={lat} lng={lng} title={title} />{' '}
+          <MapUI lat={lat} lng={lng} title={title} data={data} />{' '}
         </div>
       </div>
     </>
