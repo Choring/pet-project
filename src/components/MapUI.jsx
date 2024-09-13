@@ -33,7 +33,7 @@ export default function MapUI({ lat, lng, title }) {
   return (
     <>
       {isLoaded && (
-        <div style={{ width: '1000px', height: '600px' }}>
+        <div style={{ width: '1000px', height: '1000px' }}>
           <Map
             center={{ lat, lng }} // props로 전달받은 lat, lng 사용
             style={{ width: '100%', height: '100%' }}

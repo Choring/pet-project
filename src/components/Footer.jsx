@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -12,24 +13,20 @@ export default function Footer() {
       </span>
       <ul className='flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0'>
         <li>
-          <a href='#' className='hover:underline me-4 md:me-6'>
-            About
-          </a>
+          <Link href='#' className='hover:underline me-4 md:me-6 text-bold'>
+            이용약관
+          </Link>
         </li>
         <li>
-          <a href='#' className='hover:underline me-4 md:me-6'>
-            Privacy Policy
-          </a>
+          <Link href='#' className='hover:underline me-4 md:me-6 text-bold'>
+            전가금거래 이용약관
+          </Link>
         </li>
+
         <li>
-          <a href='#' className='hover:underline me-4 md:me-6'>
-            Licensing
-          </a>
-        </li>
-        <li>
-          <a href='#' className='hover:underline'>
-            Contact
-          </a>
+          <Link href='#' className='hover:underline text-bold'>
+            개인정보 처리방침
+          </Link>
         </li>
       </ul>
     </footer>
