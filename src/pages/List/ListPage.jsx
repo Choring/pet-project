@@ -40,7 +40,7 @@ export const ListPage = () => {
             <button className="border p-2 px-3 rounded-[18px] bg-[#ff7336] text-white" onClick={() => navigate(-1)}>뒤로가기</button>
         </div>
         <div className="article">
-            <div className="list-container">
+            <div className="list-container h-[100vh] overflow-y-scroll">
                 <div>
                     {data.data?.map((item, index) => {
                     return(
