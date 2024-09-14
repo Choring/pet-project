@@ -100,7 +100,7 @@ export default function Navbar({ setFilterMuseum, setPage }) {
                   className={`block py-2 px-3 text-gray-900 rounded ${
                     activeLink === 0
                       ? 'bg-[#ff7336] text-white'
-                      : 'hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#ff7336] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white'
+                      : 'hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#000000] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white'
                   }`}
                   aria-current='page'
                   to={'/'}
@@ -113,7 +113,7 @@ export default function Navbar({ setFilterMuseum, setPage }) {
                   className={`block py-2 px-3 text-gray-900 rounded ${
                     activeLink === 1
                       ? 'bg-[#ff7336] text-white'
-                      : 'hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#ff7336] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white'
+                      : 'hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#000000] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white'
                   }`}
                   to={'/list?category=동물병원'}
                 >
@@ -125,7 +125,7 @@ export default function Navbar({ setFilterMuseum, setPage }) {
                   className={`block py-2 px-3 text-gray-900 rounded ${
                     activeLink === 2
                       ? 'bg-[#ff7336] text-white'
-                      : 'hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#ff7336] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white'
+                      : 'hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#000000] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white'
                   }`}
                   to={'/list?category=카페'}
                 >
@@ -137,7 +137,7 @@ export default function Navbar({ setFilterMuseum, setPage }) {
                   className={`art-museum-btn block py-2 px-3 text-gray-900 rounded ${
                     activeLink === 3
                       ? 'bg-[#ff7336] text-white'
-                      : 'hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#ff7336] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white'
+                      : 'hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#000000] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white'
                   }`}
                   to={'/list?category=문화시설'}
                 >
