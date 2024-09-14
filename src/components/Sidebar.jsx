@@ -7,7 +7,7 @@ import MapUI from './MapUI';
 import { useArtMuseum } from '../hooks/useArtMuseum';
 import ReactPaginate from 'react-paginate';
 
-export default function Sidebar({ filterMuseum }) {
+export default function Sidebar() {
   const [page, setPage] = useState(0); // 페이지 번호는 0부터 시작
   const { data, isLoading, isError } = useArtMuseum();
   const [lat, setLat] = useState(33.450701);

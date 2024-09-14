@@ -34,7 +34,7 @@ export const ListPage = () => {
   }
   
   return (
-    <div className='section max-w-[1200px] mx-auto'>
+    <div className='section max-w-[1200px] mx-auto mt-[100px]'>
         <div className='w-full my-5 flex justify-between'>
             <p className="font-bold text-[24px] text-center">반려동물 동반시설 리스트</p>
             <button className="border p-2 px-3 rounded-[18px] bg-[#ff7336] text-white" onClick={() => navigate(-1)}>뒤로가기</button>

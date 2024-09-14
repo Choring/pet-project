@@ -25,10 +25,7 @@ export default function Navbar({ setFilterMuseum, setPage }) {
         <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
           <Link
             className='flex items-center space-x-3 rtl:space-x-reverse'
-            onClick={() => {
-              navigate('/');
-              setActiveLink(null); // 홈으로 이동 시 모든 링크 비활성화
-            }}
+            to={'/'}
           >
             <img
               src='https://flowbite.com/docs/images/logo.svg'
@@ -36,7 +33,7 @@ export default function Navbar({ setFilterMuseum, setPage }) {
               alt='Flowbite Logo'
             />
             <span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white'>
-              Noona React
+              펫과함께
             </span>
           </Link>
           <div className='flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse'>
@@ -54,7 +51,7 @@ export default function Navbar({ setFilterMuseum, setPage }) {
                 alt='Flowbite Logo'
               />
               <span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white'>
-                Noona React
+                펫과함께
               </span>
             </button>
             <div className='flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse'>
@@ -107,11 +104,7 @@ export default function Navbar({ setFilterMuseum, setPage }) {
                       : 'hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#ff7336] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white'
                   }`}
                   aria-current='page'
-                  onClick={() => {
-                    navigate('/');
-                    setPage(1); // 페이지 1로 초기화
-                    handleLinkClick(0); // 링크 활성화
-                  }}
+                  to={'/'}
                 >
                   메인
                 </Link>
@@ -123,10 +116,7 @@ export default function Navbar({ setFilterMuseum, setPage }) {
                       ? 'bg-[#ff7336] text-white'
                       : 'hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#ff7336] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white'
                   }`}
-                  onClick={() => {
-                    setPage(1); // 페이지 1로 초기화
-                    handleLinkClick(1); // 링크 활성화
-                  }}
+                  to={'/list?category=병원'}
                 >
                   병원
                 </Link>
@@ -138,10 +128,7 @@ export default function Navbar({ setFilterMuseum, setPage }) {
                       ? 'bg-[#ff7336] text-white'
                       : 'hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#ff7336] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white'
                   }`}
-                  onClick={() => {
-                    setPage(1); // 페이지 1로 초기화
-                    handleLinkClick(2); // 링크 활성화
-                  }}
+                  to={'/list?category=카페'}
                 >
                   카페
                 </Link>
@@ -153,13 +140,9 @@ export default function Navbar({ setFilterMuseum, setPage }) {
                       ? 'bg-[#ff7336] text-white'
                       : 'hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#ff7336] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white'
                   }`}
-                  onClick={() => {
-                    setFilterMuseum(true);
-                    setPage(1); // 페이지 1로 초기화
-                    handleLinkClick(3); // 링크 활성화
-                  }}
+                  to={'/list?category=문화시설'}
                 >
-                  미술관/박물관
+                  문화시설
                 </Link>
               </li>
             </ul>
