@@ -40,7 +40,7 @@ export const MainPage = () => {
 
   return (
     <div className='flex flex-col'>
-      <div className='mt-28 bg-orange w-full h-96 flex flex-col items-center justify-center'>
+      <div className='mt-[72px] bg-orange w-full h-96 flex flex-col items-center justify-center'>
         <div className="h-screen w-2/5 flex flex-col items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${slides[0].url})` }}>
         </div>
         <button className=' group-hover:block absolute top-[40%] translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 text-white cursor-pointer'>
@@ -51,7 +51,7 @@ export const MainPage = () => {
         </button>
       </div>
 
-      <div className=' flex flex-col items-center'>
+      <div className=' flex flex-col items-center my-[100px]'>
         <Section title="카페" />
         <Section title="미술관,박물관" />
         <Section title="병원" />
