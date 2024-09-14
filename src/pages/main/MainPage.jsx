@@ -83,8 +83,8 @@ export const MainPage = () => {
 
   return (
     <div className='flex flex-col'>
-      <div className='mt-[72px] w-full h-96 bg-orange flex flex-col items-center justify-center'>
-        <div className={`h-screen sm:w-[700px] w-screen flex flex-col items-center justify-center bg-cover bg-center transition-opacity duration-1000 
+      <div className='mt-[72px] w-full sm:h-96 h-64 bg-orange flex flex-col items-center justify-center'>
+        <div className={`sm:h-96 h-64 sm:w-[700px] w-screen flex flex-col items-center justify-center bg-cover bg-center transition-opacity duration-1000 
           ${fade ? 'opacity-100' : 'opacity-0'}`} style={{ backgroundImage: `url(${slides[currentIndex].url})` }}>
         </div>
       </div>
