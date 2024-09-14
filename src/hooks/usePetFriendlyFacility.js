@@ -11,7 +11,7 @@ const getPetFriendlyFacility = ({page}) => {
     return api.get(`15111389/v1/uddi:${API_KEY}?serviceKey=${SERVICE_KEY}`,{
             params: {
                 page: pages,
-                perPage: 10
+                perPage: 2000
             }   
         }
     );

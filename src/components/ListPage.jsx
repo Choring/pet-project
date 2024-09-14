@@ -40,9 +40,10 @@ export default function ListPage() {
   };
 
   return (
-    <>
-      <div className='main-section grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-screen'>
-        <aside
+    <div className="mx-auto border">
+      <div className='main-section grid grid-cols-1 my-[100px] md:grid-cols-1 lg:grid-cols-3 h-screen'>
+      {/* <div className='main-section max-w-[1200px] w-full flex justify-between my-[100px] h-screen'> */}
+        <div
           id='default-sidebar'
           className='list-section col-span-1 fixed md:static top-16 left-0 z-10 h-screen bg-gray-50 dark:bg-gray-800 px-3 py-4 overflow-y-auto'
           aria-label='Sidebar'
@@ -52,7 +53,7 @@ export default function ListPage() {
               currentPageData.map((item, index) => (
                 <li
                   key={index}
-                  className='museum-list border-solid border-2 rounded-md my-2 p-4 w-full'
+                  className='museum-list w-full border-solid border-2 rounded-md my-2 p-4'
                   onClick={() =>
                     handleLatLng(item.위도, item.경도, item.시설명)
                   }
@@ -105,12 +106,11 @@ export default function ListPage() {
               forcePage={page} // 현재 페이지 번호 설정
             />
           </div>
-        </aside>
-
-        <div className='map-section' style={{ width: '100%', height: '600px' }}>
+        </div>
+        <div className='map-section w-full h-[600px]'>
           <MapUI lat={lat} lng={lng} title={title} data={data} />{' '}
         </div>
       </div>
-    </>
+    </div>
   );
 }

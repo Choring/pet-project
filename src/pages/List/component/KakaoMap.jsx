@@ -2,15 +2,14 @@ import React from 'react'
 import './KakaoMap.style.css';
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 
-export const KakaoMap = ({latitude,longitude}) => {
-  
+export const KakaoMap = ({latitude,longitude,name}) => {
   return (
     <div className="h-full">
       <Map
         center={{ lat: latitude, lng: longitude }}
         style={{
           width: '100%',
-          height: '500px',
+          height: '600px',
           borderRadius: '20px',
         }}
       >
@@ -23,14 +22,14 @@ export const KakaoMap = ({latitude,longitude}) => {
         {/* 핀 찍힐 위치 */}
         
           <div
-            className="h-full"
+            className="w-full"
             style={{
-              fontSize: '19px',
+              fontSize: '18px',
               fontWeight: '700',
               borderRadius: '10px',
             }}
           >
-            😎 해당 위치 😎
+            <p className="text-center">{name}</p>
           </div>
         </MapMarker>
       </Map>

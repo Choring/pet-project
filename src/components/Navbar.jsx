@@ -115,7 +115,7 @@ export default function Navbar({ setFilterMuseum, setPage }) {
                       ? 'bg-[#ff7336] text-white'
                       : 'hover:bg-[#ff7336] hover:text-white md:hover:bg-transparent md:hover:text-[#ff7336] dark:text-white dark:hover:bg-[#ff7336] dark:hover:text-white'
                   }`}
-                  to={'/list?category=병원'}
+                  to={'/list?category=동물병원'}
                 >
                   병원
                 </Link>
