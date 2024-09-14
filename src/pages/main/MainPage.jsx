@@ -4,10 +4,19 @@ export const MainPage = () => {
 
   const slides = [
     {
+      url: 'https://www.hisky.it/storage/app/resources/resize/img_973877e1d8b8acd2c4485612fe93086d_800_900_0_0_auto.jpg'
+    },
+    {
       url: 'https://health.chosun.com/site/data/img_dir/2022/05/24/2022052401445_0.jpg'
     },
     {
+      url: 'https://media.istockphoto.com/id/1348512805/photo/mother-and-son-playing-with-a-cat-at-home.jpg?s=612x612&w=0&k=20&c=pBa2sOneSfff5Hz1s7UYRdDCtj4vOsGbi8xXE6_QlvY='
+    },
+    {
       url: 'https://imgnn.seoul.co.kr/img/upload/2016/08/08/SSI_20160808134848_V.jpg'
+    },
+    {
+      url: 'https://hips.hearstapps.com/hmg-prod/images/traveling-with-a-cat-woman-holding-cat-in-car-1644513685.jpg?crop=1xw:1xh;center,top&resize=980:*'
     },
     {
       url: 'https://img.seoul.co.kr/img/upload/2020/03/02/SSI_20200302104923_O2.jpg'
