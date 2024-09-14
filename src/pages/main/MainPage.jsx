@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 export const MainPage = () => {
 
@@ -19,6 +19,40 @@ export const MainPage = () => {
       url: 'https://blogs.cdc.gov/wp-content/uploads/sites/6/2018/05/HEADER-PHOTO_iStock-871996576.jpg'
     },
   ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+        setFade(true);
+      }, 650);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [slides.length]);
+  /*
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setFade(false);
+    setTimeout(() => {
+      setCurrentIndex(newIndex);
+      setFade(true);
+    }, 500);
+  };
+
+  const nextSlide = () => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setFade(false);
+    setTimeout(() => {
+      setCurrentIndex(newIndex);
+      setFade(true);
+    }, 500);
+  };
+  */
 
   const Section = ({ title }) => (
     <div>
@@ -40,20 +74,15 @@ export const MainPage = () => {
 
   return (
     <div className='flex flex-col'>
-      <div className='mt-[72px] bg-orange w-full h-96 flex flex-col items-center justify-center'>
-        <div className="h-screen w-2/5 flex flex-col items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${slides[0].url})` }}>
+      <div className='mt-[72px] w-full h-96 bg-orange flex flex-col items-center justify-center'>
+        <div className={`h-screen w-[700px] flex flex-col items-center justify-center bg-cover bg-center transition-opacity duration-1000 
+          ${fade ? 'opacity-100' : 'opacity-0'}`} style={{ backgroundImage: `url(${slides[currentIndex].url})` }}>
         </div>
-        <button className=' group-hover:block absolute top-[40%] translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 text-white cursor-pointer'>
-          &#10094;
-        </button>
-        <button className='absolute top-[40%] translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 text-white cursor-pointer'>
-          &#10095;
-        </button>
       </div>
 
       <div className=' flex flex-col items-center my-[100px]'>
         <Section title="카페" />
-        <Section title="미술관,박물관" />
+        <Section title="문화시설" />
         <Section title="병원" />
       </div>
     </div>
