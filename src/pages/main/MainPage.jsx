@@ -57,7 +57,7 @@ export const MainPage = () => {
   const Section = ({ title }) => (
     <div>
       <header className="text-2xl mt-5 ml-3">{title}</header>
-      <div className="w-full flex flex-row">
+      <div className="w-full flex md:flex-row flex-col justify-center">
         {Array(7).fill(0).map((_, index) => (
           <div key={index} className="w-44 h-56 mr-5 border-solid border divide-y mt-5">
             <div className='h-4/6 w-full'></div>
@@ -75,7 +75,7 @@ export const MainPage = () => {
   return (
     <div className='flex flex-col'>
       <div className='mt-[72px] w-full h-96 bg-orange flex flex-col items-center justify-center'>
-        <div className={`h-screen w-[700px] flex flex-col items-center justify-center bg-cover bg-center transition-opacity duration-1000 
+        <div className={`h-screen md:w-[700px] w-screen flex flex-col items-center justify-center bg-cover bg-center transition-opacity duration-1000 
           ${fade ? 'opacity-100' : 'opacity-0'}`} style={{ backgroundImage: `url(${slides[currentIndex].url})` }}>
         </div>
       </div>
