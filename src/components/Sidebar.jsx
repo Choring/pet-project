@@ -17,7 +17,7 @@ export default function Sidebar() {
   const filteredData = data?.filter(
     (item) => item.카테고리3 === '미술관' || item.카테고리3 === '박물관'
   );
-
+  console.log(filteredData);
   return (
     <>
       <button
