@@ -1,4 +1,8 @@
 import React, {useState, useEffect} from 'react'
+import { IoIosCafe } from "react-icons/io";
+import { FaHospital } from "react-icons/fa";
+import { PiPaintBrushBroadBold } from "react-icons/pi";
+import { useNavigate } from 'react-router-dom';
 
 export const MainPage = () => {
 
@@ -30,6 +34,19 @@ export const MainPage = () => {
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true);
+  const navigate = useNavigate();
+
+  const gotoHospital = () => {
+    navigate('/list?category=동물병원');
+  }
+
+  const gotoCafe = () => {
+    navigate('/list?category=카페');
+  }
+
+  const gotoGallery = () => {
+    navigate('/list?category=문화시설');
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -41,58 +58,28 @@ export const MainPage = () => {
     }, 4000);
     return () => clearInterval(interval);
   }, [slides.length]);
-  /*
-  const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-    setFade(false);
-    setTimeout(() => {
-      setCurrentIndex(newIndex);
-      setFade(true);
-    }, 500);
-  };
 
-  const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setFade(false);
-    setTimeout(() => {
-      setCurrentIndex(newIndex);
-      setFade(true);
-    }, 500);
-  };
-  */
-
-  const Section = ({ title }) => (
-    <div>
-      <header className="text-2xl mt-5 ml-3">{title}</header>
-      <div className="w-full flex md:flex-row flex-col justify-center">
-        {Array(7).fill(0).map((_, index) => (
-          <div key={index} className="w-44 h-56 mr-5 border-solid border divide-y mt-5">
-            <div className='h-4/6 w-full'></div>
-            <div>
-              <div className='text-lg'>시설명</div>
-              <div className='text-base'>주소</div>
-              <div className='text-base'>운영시간</div>
-            </div>
-          </div>
-        ))}
+  const Section = ({ title, icon, nav }) => (
+    <div onClick={nav} className=' sm:h-[450px] h-[300px] sm:w-[400px] w-[300px] m-10 bg-orange flex flex-col justify-center rounded-3xl cursor-pointer '>
+      <header className="text-[50px] font-bold mt-5 flex justify-center">{title}</header>
+      <div className="w-full flex md:flex-row flex-col justify-center items-center mt-16">
+        <div className='text-[100px]'>{icon}</div>
       </div>
     </div>
   );
 
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col items-center'>
       <div className='mt-[72px] w-full sm:h-96 h-64 bg-orange flex flex-col items-center justify-center'>
         <div className={`sm:h-96 h-64 sm:w-[700px] w-screen flex flex-col items-center justify-center bg-cover bg-center transition-opacity duration-1000 
           ${fade ? 'opacity-100' : 'opacity-0'}`} style={{ backgroundImage: `url(${slides[currentIndex].url})` }}>
         </div>
       </div>
 
-      <div className=' flex flex-col items-center my-[100px]'>
-        <Section title="카페" />
-        <Section title="문화시설" />
-        <Section title="병원" />
+      <div className='w-screen flex lg:flex-row flex-col justify-between items-center '>
+        <Section title="병원" icon={<FaHospital />} nav={gotoHospital}/>
+        <Section title="카페" icon={<IoIosCafe/>} nav={gotoCafe}/>
+        <Section title="문화시설" icon={<PiPaintBrushBroadBold />} nav={gotoGallery}/>
       </div>
     </div>
   )
