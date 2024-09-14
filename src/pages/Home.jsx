@@ -1,8 +1,8 @@
 import React from 'react';
-import Sidebar from '../components/Sidebar';
+import ListPage from '../components/ListPage';
 
 export default function Home() {
   return (
-    <Sidebar />
+    <ListPage />
   );
 }

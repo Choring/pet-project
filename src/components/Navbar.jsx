@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Navbar({ setFilterMuseum, setPage }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState(null); // 활성화된 링크 상태 추가
-  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -21,7 +20,7 @@ export default function Navbar({ setFilterMuseum, setPage }) {
   return (
     <>
     
-      <nav className='bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600'>
+      <nav className='bg-[white] dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600'>
         <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
           <Link
             className='flex items-center space-x-3 rtl:space-x-reverse'
