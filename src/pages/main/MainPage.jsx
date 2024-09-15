@@ -1,6 +1,10 @@
 import React from 'react'
-import Carousel from "./component/Carousel";
-import Section from "./component/Section";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { FaHospital } from "react-icons/fa6";
+import { IoIosCafe } from "react-icons/io";
+import { PiPaintBrushBroadBold } from "react-icons/pi";
+
 
 export const MainPage = () => {
 
