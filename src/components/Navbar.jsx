@@ -44,14 +44,14 @@ export default function Navbar({ setFilterMuseum, setPage }) {
               aria-expanded={isMenuOpen}
               onClick={toggleMenu}
             >
-              <img
+              {/* <img
                 src='https://flowbite.com/docs/images/logo.svg'
                 className='h-8'
                 alt='Flowbite Logo'
               />
               <span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white'>
                 펫과함께
-              </span>
+              </span> */}
             </button>
             <div className='flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse'>
               <button
