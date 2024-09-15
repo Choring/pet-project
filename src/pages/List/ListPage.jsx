@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState} from 'react';
 import './ListPage.style.css';
-import { KakaoMap } from './component/KakaoMap';
+import {KakaoMap} from './component/KakaoMap';
 import ReactPaginate from "react-paginate";
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import { useArtMuseum } from "../../hooks/useArtMuseum";
+import {useLocation, useNavigate, useSearchParams} from "react-router-dom";
+import {useArtMuseum} from "../../hooks/useArtMuseum";
 import NotFound from "../../components/NotFound";
 import LoadingSpinner from "../../components/LoadingSpinner";
 
