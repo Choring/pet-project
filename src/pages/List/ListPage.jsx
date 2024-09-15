@@ -51,7 +51,7 @@ export const ListPage = () => {
       <div className='w-full my-5 flex justify-between'>
         <p className="font-bold text-[24px] text-center">반려동물 동반시설 리스트</p>
         <button
-          className="text-[white] p-2 px-3 rounded-[18px] bg-[#ff7336] text-white"
+          className="font-bold p-2 px-3 rounded-[18px] bg-[#ff7336]"
           onClick={() => navigate(-1)}
         >
           뒤로가기
