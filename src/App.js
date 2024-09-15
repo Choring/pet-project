@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Home from './pages/Home';
 import NotFound from './components/NotFound';
 import { ListPage } from "./pages/List/ListPage";
 import { MainPage } from "./pages/main/MainPage";

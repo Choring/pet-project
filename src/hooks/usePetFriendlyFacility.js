@@ -6,8 +6,6 @@ const SERVICE_KEY = process.env.REACT_APP_SERVICE_KEY;
 
 const getPetFriendlyFacility = ({page}) => {
     const pages = page ? page : 1
-
-
     return api.get(`15111389/v1/uddi:${API_KEY}?serviceKey=${SERVICE_KEY}`,{
             params: {
                 page: pages,
