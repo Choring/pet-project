@@ -60,7 +60,7 @@ export const MainPage = () => {
   }, [slides.length]);
 
   const Section = ({ title, icon, nav }) => (
-    <div onClick={nav} className=' sm:h-[450px] h-[300px] sm:w-[400px] w-[300px] m-10 bg-orange flex flex-col justify-center rounded-3xl cursor-pointer '>
+    <div onClick={nav} className=' sm:h-[450px] h-[300px] min-[390px]:w-[400px] w-screen m-10 bg-orange flex flex-col justify-center rounded-3xl cursor-pointer '>
       <header className="text-[50px] font-bold mt-5 flex justify-center">{title}</header>
       <div className="w-full flex md:flex-row flex-col justify-center items-center mt-16">
         <div className='text-[100px]'>{icon}</div>
