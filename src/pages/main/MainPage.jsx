@@ -60,7 +60,7 @@ export const MainPage = () => {
   }, [slides.length]);
 
   const Section = ({ title, icon, nav }) => (
-    <div onClick={nav} className=' sm:h-[450px] h-[300px] min-[390px]:w-[400px] w-screen m-10 bg-orange flex flex-col justify-center rounded-3xl cursor-pointer '>
+    <div onClick={nav} className=' sm:h-[450px] h-[300px] min-[390px]:w-[400px] w-screen m-5 bg-orange flex flex-col justify-center rounded-3xl cursor-pointer '>
       <header className="text-[50px] font-bold mt-5 flex justify-center">{title}</header>
       <div className="w-full flex md:flex-row flex-col justify-center items-center mt-16">
         <div className='text-[100px]'>{icon}</div>
@@ -69,14 +69,14 @@ export const MainPage = () => {
   );
 
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex flex-col items-center w-screen'>
       <div className='mt-[72px] w-full sm:h-96 h-64 bg-orange flex flex-col items-center justify-center'>
         <div className={`sm:h-96 h-64 sm:w-[700px] w-screen flex flex-col items-center justify-center bg-cover bg-center transition-opacity duration-1000 
           ${fade ? 'opacity-100' : 'opacity-0'}`} style={{ backgroundImage: `url(${slides[currentIndex].url})` }}>
         </div>
       </div>
 
-      <div className='w-screen flex lg:flex-row flex-col justify-between items-center '>
+      <div className='max-w-[1200px] flex lg:flex-row flex-col justify-between items-center '>
         <Section title="병원" icon={<FaHospital />} nav={gotoHospital}/>
         <Section title="카페" icon={<IoIosCafe/>} nav={gotoCafe}/>
         <Section title="문화시설" icon={<PiPaintBrushBroadBold />} nav={gotoGallery}/>
